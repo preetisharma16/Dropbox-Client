@@ -96,6 +96,7 @@ async function handleSubmit(event) {
 }
 
 function deleteDropbox() {
+  Storage.vault.remove(dropbox.attachment); 
   return API.del("dropbox", `/dropbox/${id}`);
 }
 
