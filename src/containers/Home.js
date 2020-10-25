@@ -40,6 +40,9 @@ export default function Home() {
   }, [isAuthenticated]);
   
   function formatFilename(str) {
+    if (str ==null) {
+	return "";
+    }
     return str.replace(/^\w+-/, "");
   }
 

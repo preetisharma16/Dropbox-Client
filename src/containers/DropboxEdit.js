@@ -81,6 +81,7 @@ async function handleSubmit(event) {
 
   try {
     if (file.current) {
+      Storage.vault.remove(dropbox.attachment); 
       attachment = await s3Upload(file.current);
     }
 
