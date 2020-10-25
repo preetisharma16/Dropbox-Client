@@ -52,26 +52,27 @@ export default function Dropbox() {
   return (
     <div className="Dropbox">
       <form onSubmit={handleSubmit}>
+        <FormGroup controlId="file">
+          <ControlLabel>Please Select a File to Upload: (Max Allowed Size: 5MB)</ControlLabel>
+          <FormControl onChange={handleFileChange} type="file" />
+        </FormGroup>
         <FormGroup controlId="content">
+          <ControlLabel>Enter File Description Here:</ControlLabel>
           <FormControl
             value={content}
-            componentClass="textarea"
+	    placeHolder="Description"
+            type="text"
             onChange={e => setContent(e.target.value)}
           />
         </FormGroup>
-        <FormGroup controlId="file">
-          <ControlLabel>Attachment</ControlLabel>
-          <FormControl onChange={handleFileChange} type="file" />
-        </FormGroup>
         <LoaderButton
-          block
           type="submit"
           bsSize="large"
           bsStyle="primary"
           isLoading={isLoading}
           disabled={!validateForm()}
         >
-          Create
+          Upload
         </LoaderButton>
       </form>
     </div>

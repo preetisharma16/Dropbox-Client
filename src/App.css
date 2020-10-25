@@ -4,4 +4,12 @@
 
 .App .navbar-brand {
   font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+.App .navbar-brand>img {
+  padding: 7px 14px;
+}
+.App .navbar-brand>a {
+  text-decoration: none;
 }

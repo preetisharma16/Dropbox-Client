@@ -41,7 +41,7 @@ async function handleLogout() {
       <Navbar fluid collapseOnSelect>
         <Navbar.Header>
           <Navbar.Brand>
-            <Link to="/">Dropbox</Link>
+	    <img src="/favicon-32x32.png" alt="" /> {' '} <Link to="/">Dropbox</Link>
           </Navbar.Brand>
           <Navbar.Toggle />
         </Navbar.Header>

@@ -126,16 +126,9 @@ return (
   <div className="dropbox">
     {dropbox && (
       <form onSubmit={handleSubmit}>
-        <FormGroup controlId="content">
-          <FormControl
-            value={content}
-            componentClass="textarea"
-            onChange={e => setContent(e.target.value)}
-          />
-        </FormGroup>
         {dropbox.attachment && (
           <FormGroup>
-            <ControlLabel>Attachment</ControlLabel>
+            <ControlLabel>Update file below: (Max Allowed Size: 5MB)</ControlLabel>
             <FormControl.Static>
               <a
                 target="_blank"
@@ -151,8 +144,15 @@ return (
           {!dropbox.attachment && <ControlLabel>Attachment</ControlLabel>}
           <FormControl onChange={handleFileChange} type="file" />
         </FormGroup>
+        <FormGroup controlId="content">
+          <ControlLabel>Update Description</ControlLabel>
+          <FormControl
+            value={content}
+            type="text"
+	    onChange={e => setContent(e.target.value)}
+          />
+        </FormGroup>
         <LoaderButton
-          block
           type="submit"
           bsSize="large"
           bsStyle="primary"
@@ -160,9 +160,8 @@ return (
           disabled={!validateForm()}
         >
           Save
-        </LoaderButton>
+        </LoaderButton> {'  '}
         <LoaderButton
-          block
           bsSize="large"
           bsStyle="danger"
           onClick={handleDelete}
